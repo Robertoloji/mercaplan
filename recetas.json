@@ -1,0 +1,652 @@
+{
+  "recetas": [
+    {
+      "id": 1,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tostadas de pavo y queso con café",
+      "tipo": "desayuno",
+      "preparacion": "1. Tostar las rebanadas de pan de molde sin corteza en la tostadora.<br>2. Colocar encima las lonchas de pavo y el queso semicurado para que fundan ligeramente.<br>3. Servir acompañado de un café caliente.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 },
+        { "nombre": "Café molido natural 250g", "precioBase": 2.20 }
+      ]
+    },
+    {
+      "id": 2,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Bol de yogur con muesli y plátano",
+      "tipo": "desayuno",
+      "preparacion": "1. Verter el yogur natural en un bol hondo.<br>2. Añadir una buena ración de cereales muesli.<br>3. Cortar el plátano en rodajas y mezclar.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+      ]
+    },
+    {
+      "id": 3,
+      "estilo": "Mediterránea",
+      "nombre": "Tortilla francesa clásica con pan",
+      "tipo": "desayuno",
+      "preparacion": "1. Batir dos huevos en un bol con una pizca de sal.<br>2. Verter en una sartén con unas gotas de aceite y cuajar al gusto.<br>3. Servir con pan tostado.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 4,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Batido exprés de plátano y avena",
+      "tipo": "desayuno",
+      "preparacion": "1. Introducir en la batidora un plátano, un vaso de leche y 4 cucharadas de muesli.<br>2. Batir a máxima potencia hasta que quede una textura homogénea y beber frío.",
+      "ingredientes": [
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 }
+      ]
+    },
+    {
+      "id": 5,
+      "estilo": "Mediterránea",
+      "nombre": "Tostadas con tomate triturado y aceite",
+      "tipo": "desayuno",
+      "preparacion": "1. Tostar el pan de molde.<br>2. Untar generosamente con tomate triturado natural.<br>3. Rociar un buen chorro de aceite de oliva y sal.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 51,
+      "estilo": "Mediterránea",
+      "nombre": "Tostadas con queso tierno y aceite de oliva",
+      "tipo": "desayuno",
+      "preparacion": "1. Tostar rebanadas de pan de molde.<br>2. Disponer lonchas de queso semicurado encima.<br>3. Añadir un hilo fino de aceite de oliva.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 52,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Porridge rápido de muesli con leche",
+      "tipo": "desayuno",
+      "preparacion": "1. Calentar un vaso de leche en un cazo.<br>2. Añadir muesli y remover a fuego lento durante 3 minutos hasta espesar.<br>3. Servir con rodajas de plátano.",
+      "ingredientes": [
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+      ]
+    },
+    {
+      "id": 53,
+      "estilo": "Mediterránea",
+      "nombre": "Huevos revueltos matutinos con pan",
+      "tipo": "desayuno",
+      "preparacion": "1. Batir dos huevos y verterlos en una sartén caliente con aceite.<br>2. Remover constantemente hasta que queden jugosos.<br>3. Servir con pan tostado.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 54,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Yogur enriquecido con muesli crujiente",
+      "tipo": "desayuno",
+      "preparacion": "1. Verter dos yogures naturales en un bol.<br>2. Mezclar con abundante muesli para aportar energía matutina.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 }
+      ]
+    },
+    {
+      "id": 55,
+      "estilo": "Mediterránea",
+      "nombre": "Café solo con tostadas de pavo",
+      "tipo": "desayuno",
+      "preparacion": "1. Preparar un café largo.<br>2. Tostar pan de molde y cubrirlo con fiambre de pavo.",
+      "ingredientes": [
+        { "nombre": "Café molido natural 250g", "precioBase": 2.20 },
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 }
+      ]
+    },
+    {
+      "id": 56,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Batido cremoso de plátano y yogur",
+      "tipo": "desayuno",
+      "preparacion": "1. Batir un yogur natural junto con un plátano maduro y medio vaso de leche.<br>2. Servir bien frío.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 },
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 }
+      ]
+    },
+    {
+      "id": 57,
+      "estilo": "Mediterránea",
+      "nombre": "Desayuno clásico de leche con galletas y café",
+      "tipo": "desayuno",
+      "preparacion": "1. Calentar leche y añadir café soluble o molido filtrado.<br>2. Acompañar con galletas maría.",
+      "ingredientes": [
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Café molido natural 250g", "precioBase": 2.20 },
+        { "nombre": "Galletas maría paquete", "precioBase": 1.20 }
+      ]
+    },
+    {
+      "id": 58,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tostadas integrales con tortilla francesa",
+      "tipo": "desayuno",
+      "preparacion": "1. Hacer una tortilla francesa fina con un huevo.<br>2. Colocarla sobre pan de molde tostado.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 }
+      ]
+    },
+    {
+      "id": 59,
+      "estilo": "Mediterránea",
+      "nombre": "Pan tostado con tomate y lonchas de pavo",
+      "tipo": "desayuno",
+      "preparacion": "1. Tostar el pan, untar tomate triturado y colocar lonchas de pavo por encima.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 }
+      ]
+    },
+    {
+      "id": 60,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Bol energético de yogur, plátano y muesli",
+      "tipo": "desayuno",
+      "preparacion": "1. Combinar yogur, muesli y rodajas de plátano en un bol grande.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 }
+      ]
+    },
+    {
+      "id": 61,
+      "estilo": "Mediterránea",
+      "nombre": "Pollo al ajillo con patatas y ensalada",
+      "tipo": "comida",
+      "preparacion": "1. Dorar trozos de pechuga con ajos.<br>2. Freír patatas en rodajas y servir con ensalada.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 62,
+      "estilo": "Mediterránea",
+      "nombre": "Macarrones boloñesa caseros",
+      "tipo": "comida",
+      "preparacion": "1. Hervir macarrones.<br>2. Sofreír cebolla y carne picada, añadir tomate y cocinar 15 minutos.",
+      "ingredientes": [
+        { "nombre": "Pasta macarrones 1kg", "precioBase": 1.05 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+        { "nombre": "Carne picada ternera/cerdo 500g", "precioBase": 4.85 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+      ]
+    },
+    {
+      "id": 63,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Salmón a la plancha con arroz y verduras",
+      "tipo": "comida",
+      "preparacion": "1. Cocer arroz.<br>2. Cocinar lomos de salmón y saltear zanahoria y calabacín.",
+      "ingredientes": [
+        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+      ]
+    },
+    {
+      "id": 64,
+      "estilo": "Mediterránea",
+      "nombre": "Arroz con pollo y verduras de la huerta",
+      "tipo": "comida",
+      "preparacion": "1. Rehogar pollo con calabacín y zanahoria.<br>2. Añadir arroz y agua, cocinar 18 minutos.",
+      "ingredientes": [
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 },
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+      ]
+    },
+    {
+      "id": 65,
+      "estilo": "Mediterránea",
+      "nombre": "Pechuga de pollo al horno con patatas panadera",
+      "tipo": "comida",
+      "preparacion": "1. Cortar patatas y cebolla en rodajas finas, hornear con aceite.<br>2. Colocar la pechuga encima hasta que se dore.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 },
+        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+      ]
+    },
+    {
+      "id": 66,
+      "estilo": "Mediterránea",
+      "nombre": "Espaguetis salteados con pollo y verduras",
+      "tipo": "comida",
+      "preparacion": "1. Cocer pasta.<br>2. Saltear tiras de pollo con cebolla y zanahoria, y mezclar.",
+      "ingredientes": [
+        { "nombre": "Pasta macarrones 1kg", "precioBase": 1.05 },
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+      ]
+    },
+    {
+      "id": 67,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Arroz salteado con huevo y pavo",
+      "tipo": "comida",
+      "preparacion": "1. Cocer arroz.<br>2. Saltear en la sartén con trozos de pavo y un huevo revuelto.",
+      "ingredientes": [
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 }
+      ]
+    },
+    {
+      "id": 68,
+      "estilo": "Mediterránea",
+      "nombre": "Guiso rápido de patatas con carne picada",
+      "tipo": "comida",
+      "preparacion": "1. Sofreír cebolla y carne picada.<br>2. Añadir patatas troceadas y agua, cocer hasta espesar.",
+      "ingredientes": [
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Carne picada ternera/cerdo 500g", "precioBase": 4.85 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+      ]
+    },
+    {
+      "id": 69,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Salmón al horno con patatas tiernas",
+      "tipo": "comida",
+      "preparacion": "1. Cocer patatas ligeramente y hornear junto con los lomos de salmón.",
+      "ingredientes": [
+        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 }
+      ]
+    },
+    {
+      "id": 70,
+      "estilo": "Mediterránea",
+      "nombre": "Pollo encebollado con arroz blanco",
+      "tipo": "comida",
+      "preparacion": "1. Pochar mucha cebolla en juliana, añadir el pollo y cocinar a fuego lento.<br>2. Servir con arroz.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 },
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 }
+      ]
+    },
+    {
+      "id": 71,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Ensalada completa de pollo y vegetales",
+      "tipo": "comida",
+      "preparacion": "1. Base de lechuga, zanahoria rallada, cebolla y dados de pollo a la plancha.",
+      "ingredientes": [
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 },
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 }
+      ]
+    },
+    {
+      "id": 72,
+      "estilo": "Mediterránea",
+      "nombre": "Macarrones gratinados con tomate y queso",
+      "tipo": "comida",
+      "preparacion": "1. Hervir macarrones, mezclar con tomate y cubrir con queso en lonchas para fundir.",
+      "ingredientes": [
+        { "nombre": "Pasta macarrones 1kg", "precioBase": 1.05 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 }
+      ]
+    },
+    {
+      "id": 73,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Arroz con salmón y calabacín",
+      "tipo": "comida",
+      "preparacion": "1. Cocer arroz.<br>2. Saltear calabacín y trozos de salmón, y mezclar todo.",
+      "ingredientes": [
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 },
+        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+      ]
+    },
+    {
+      "id": 74,
+      "estilo": "Mediterránea",
+      "nombre": "Filetes de pollo con patatas fritas y huevo",
+      "tipo": "comida",
+      "preparacion": "1. Freír patatas y hacer un huevo frito o plancha.<br>2. Acompañar con filete de pollo.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 }
+      ]
+    },
+    {
+      "id": 75,
+      "estilo": "Mediterránea",
+      "nombre": "Albóndigas caseras en salsa con arroz",
+      "tipo": "comida",
+      "preparacion": "1. Cocinar albóndigas de carne con salsa de tomate y servir con arroz.",
+      "ingredientes": [
+        { "nombre": "Carne picada ternera/cerdo 500g", "precioBase": 4.85 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 }
+      ]
+    },
+    {
+      "id": 76,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tortitas ligeras de avena",
+      "tipo": "merienda",
+      "preparacion": "1. Mezclar muesli molido con huevo y cocinar en sartén.",
+      "ingredientes": [
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 }
+      ]
+    },
+    {
+      "id": 77,
+      "estilo": "Mediterránea",
+      "nombre": "Yogur con plátano",
+      "tipo": "merienda",
+      "preparacion": "1. Merienda sencilla de yogur natural con rodajas de plátano.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+      ]
+    },
+    {
+      "id": 78,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Sándwich de pavo proteico",
+      "tipo": "merienda",
+      "preparacion": "1. Pan de molde con lonchas de pavo.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 }
+      ]
+    },
+    {
+      "id": 79,
+      "estilo": "Mediterránea",
+      "nombre": "Café con leche y galletas",
+      "tipo": "merienda",
+      "preparacion": "1. Café con leche y galletas maría.",
+      "ingredientes": [
+        { "nombre": "Café molido natural 250g", "precioBase": 2.20 },
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Galletas maría paquete", "precioBase": 1.20 }
+      ]
+    },
+    {
+      "id": 80,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Batido de leche y plátano",
+      "tipo": "merienda",
+      "preparacion": "1. Batir leche fría con un plátano.",
+      "ingredientes": [
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+      ]
+    },
+    {
+      "id": 81,
+      "estilo": "Mediterránea",
+      "nombre": "Bol de yogur con muesli",
+      "tipo": "merienda",
+      "preparacion": "1. Yogur mezclado con muesli crujiente.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 }
+      ]
+    },
+    {
+      "id": 82,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tostadas con queso tierno",
+      "tipo": "merienda",
+      "preparacion": "1. Pan tostado con lonchas de queso.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 }
+      ]
+    },
+    {
+      "id": 83,
+      "estilo": "Mediterránea",
+      "nombre": "Plátano con galletas maría",
+      "tipo": "merienda",
+      "preparacion": "1. Merienda clásica y rápida.",
+      "ingredientes": [
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 },
+        { "nombre": "Galletas maría paquete", "precioBase": 1.20 }
+      ]
+    },
+    {
+      "id": 84,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Yogur con muesli y plátano",
+      "tipo": "merienda",
+      "preparacion": "1. Mezclar yogur, muesli y plátano troceado.",
+      "ingredientes": [
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+      ]
+    },
+    {
+      "id": 85,
+      "estilo": "Mediterránea",
+      "nombre": "Café con leche y galletas",
+      "tipo": "merienda",
+      "preparacion": "1. Taza de café con leche y galletas.",
+      "ingredientes": [
+        { "nombre": "Café molido natural 250g", "precioBase": 2.20 },
+        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 },
+        { "nombre": "Galletas maría paquete", "precioBase": 1.20 }
+      ]
+    },
+    {
+      "id": 86,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tortilla francesa de pavo con ensalada",
+      "tipo": "cena",
+      "preparacion": "1. Tortilla de huevo y pavo con lechuga.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 }
+      ]
+    },
+    {
+      "id": 87,
+      "estilo": "Mediterránea",
+      "nombre": "Pollo a la plancha con patatas asadas",
+      "tipo": "cena",
+      "preparacion": "1. Patatas al horno y pollo a la plancha.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 }
+      ]
+    },
+    {
+      "id": 88,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Salmón a la plancha con ensalada",
+      "tipo": "cena",
+      "preparacion": "1. Salmón con lechuga y zanahoria.",
+      "ingredientes": [
+        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 }
+      ]
+    },
+    {
+      "id": 89,
+      "estilo": "Mediterránea",
+      "nombre": "Tortilla de patata francesa",
+      "tipo": "cena",
+      "preparacion": "1. Patatas en daditos con huevo cuajado.",
+      "ingredientes": [
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 }
+      ]
+    },
+    {
+      "id": 90,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Pollo salteado con calabacín",
+      "tipo": "cena",
+      "preparacion": "1. Tiras de pollo con calabacín a la sartén.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+      ]
+    },
+    {
+      "id": 91,
+      "estilo": "Mediterránea",
+      "nombre": "Ensalada campera ligera",
+      "tipo": "cena",
+      "preparacion": "1. Patata cocida, huevo, cebolla y tomate.",
+      "ingredientes": [
+        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+      ]
+    },
+    {
+      "id": 92,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tortilla francesa con pavo",
+      "tipo": "cena",
+      "preparacion": "1. Huevos y fiambre de pavo.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 }
+      ]
+    },
+    {
+      "id": 93,
+      "estilo": "Mediterránea",
+      "nombre": "Crema de verduras casera",
+      "tipo": "cena",
+      "preparacion": "1. Calabacín, zanahoria y cebolla cocidos y triturados.",
+      "ingredientes": [
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 },
+        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+      ]
+    },
+    {
+      "id": 94,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Salmón con lechuga",
+      "tipo": "cena",
+      "preparacion": "1. Lomos de salmón y ensalada verde.",
+      "ingredientes": [
+        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 }
+      ]
+    },
+    {
+      "id": 95,
+      "estilo": "Mediterránea",
+      "nombre": "Sándwich mixto caliente",
+      "tipo": "cena",
+      "preparacion": "1. Pan de molde con pavo y queso fundido.",
+      "ingredientes": [
+        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 }
+      ]
+    },
+    {
+      "id": 96,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Pollo a la plancha con calabacín",
+      "tipo": "cena",
+      "preparacion": "1. Pollo y calabacín a la plancha.",
+      "ingredientes": [
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+      ]
+    },
+    {
+      "id": 97,
+      "estilo": "Mediterránea",
+      "nombre": "Huevos revueltos con tomate",
+      "tipo": "cena",
+      "preparacion": "1. Tomate triturado sofrito con huevos revueltos.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 }
+      ]
+    },
+    {
+      "id": 98,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Tortilla francesa con queso",
+      "tipo": "cena",
+      "preparacion": "1. Huevos y queso tierno fundido.",
+      "ingredientes": [
+        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 }
+      ]
+    },
+    {
+      "id": 99,
+      "estilo": "Mediterránea",
+      "nombre": "Ensalada templada con pollo",
+      "tipo": "cena",
+      "preparacion": "1. Lechuga con trozos de pollo caliente.",
+      "ingredientes": [
+        { "nombre": "Lechuga iceberg", "precioBase": 1.10 },
+        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 }
+      ]
+    },
+    {
+      "id": 100,
+      "estilo": "Fitness / Proteica",
+      "nombre": "Cena ligera de pavo y yogur",
+      "tipo": "cena",
+      "preparacion": "1. Lonchas de pavo y yogur natural.",
+      "ingredientes": [
+        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MercaPlan - App de Menús y Compras</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#008a3e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        :root {
+            --primary: #008a3e;
+            --primary-dark: #00682f;
+            --accent: #ff6600;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --gray: #7f8c8d;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        header {
+            width: 100%;
+            max-width: 680px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ESTILO PARA EL LOGOTIPO DE IMAGEN */
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--text);
+        }
+
+        .code-link {
+            background: #2d3748;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 680px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-indicator {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: var(--text);
+        }
+
+        /* SUPERMARKET GRID */
+        .super-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .super-card {
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .super-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .super-card.selected {
+            border-color: var(--primary);
+            background: #e8f5e9;
+        }
+
+        .super-logo {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .super-logo.mercadona { color: #008a3e; }
+        .super-logo.carrefour { color: #004d99; }
+        .super-logo.aldi { color: #002b49; }
+        .super-logo.bm { color: #e65100; }
+        .super-logo.ahorramas { color: #c62828; }
+
+        /* BUDGET SLIDER */
+        .budget-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            margin: 1.5rem 0;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        .budget-labels {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* COUNTERS & OPTIONS */
+        .counter-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .counter-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .counter-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .option-item:hover {
+            border-color: var(--gray);
+        }
+
+        .option-item input {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .grid-days {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 1.2rem;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* RESULTS VIEW STYLES */
+        .results-header {
+            background: #e8f5e9;
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .budget-comparison {
+            text-align: right;
+        }
+
+        .budget-target-num {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        .budget-actual-num {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        .planner-day-card {
+            background: #fafafa;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+
+        .planner-day-title {
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+
+        .planner-meal {
+            font-size: 0.88rem;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .grocery-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            border-bottom: 1px dashed #f0f0f0;
+        }
+
+        .recipe-full-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .recipe-full-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .recipe-section-subtitle {
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-top: 10px;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .recipe-ing-list {
+            padding-left: 18px;
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .recipe-steps-text {
+            font-size: 0.9rem;
+            color: var(--text);
+            line-height: 1.5;
+            background: #fafafa;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <!-- AQUÍ SUSTITUIMOS EL TEXTO MP POR LA IMAGEN -->
+            <img src="icon-192.png" alt="MercaPlan Logo" class="logo-img">
+            <h1>MercaPlan</h1>
+        </div>
+        <a href="#" class="code-link" onclick="location.reload()">Reiniciar</a>
+    </header>
+
+    <div class="app-container" id="app">
+        <!-- Contenido dinámico -->
+    </div>
+
+    <script>
+        const baseRecetas = {
+            "recetas": [
+                {
+                    "id": 1, "estilo": "Fitness / Proteica", "nombre": "Tostadas de pavo y queso con café", "tipo": "desayuno",
+                    "preparacion": "1. Tostar las rebanadas de pan de molde sin corteza.<br>2. Colocar encima las lonchas de pavo y el queso semicurado para que fundan ligeramente.<br>3. Servir acompañado de un café caliente.",
+                    "ingredientes": [
+                        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+                        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+                        { "nombre": "Queso semicurado lonchas 200g", "precioBase": 2.80 },
+                        { "nombre": "Café molido natural 250g", "precioBase": 2.20 }
+                    ]
+                },
+                {
+                    "id": 2, "estilo": "Fitness / Proteica", "nombre": "Bol de yogur con muesli y plátano", "tipo": "desayuno",
+                    "preparacion": "1. Verter el yogur natural en un bol hondo.<br>2. Añadir muesli y rodajas de plátano.<br>3. Mezclar y disfrutar.",
+                    "ingredientes": [
+                        { "nombre": "Yogur natural pack 4", "precioBase": 1.40 },
+                        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+                        { "nombre": "Plátano de Canarias 1kg", "precioBase": 1.75 }
+                    ]
+                },
+                {
+                    "id": 3, "estilo": "Mediterránea", "nombre": "Tortilla francesa clásica con pan", "tipo": "desayuno",
+                    "preparacion": "1. Batir dos huevos con sal.<br>2. Cuajar en la sartén con aceite.<br>3. Servir con pan tostado.",
+                    "ingredientes": [
+                        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+                        { "nombre": "Pan de molde sin corteza", "precioBase": 1.35 },
+                        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+                    ]
+                },
+                {
+                    "id": 11, "estilo": "Mediterránea", "nombre": "Pollo al ajillo con patatas y ensalada", "tipo": "comida",
+                    "preparacion": "1. Dorar trozos de pechuga de pollo con ajos y aceite.<br>2. Freír patatas en rodajas.<br>3. Acompañar con ensalada de lechuga.",
+                    "ingredientes": [
+                        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+                        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+                        { "nombre": "Lechuga iceberg", "precioBase": 1.10 },
+                        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+                    ]
+                },
+                {
+                    "id": 12, "estilo": "Mediterránea", "nombre": "Macarrones boloñesa caseros", "tipo": "comida",
+                    "preparacion": "1. Hervir macarrones.<br>2. Sofreír cebolla y carne picada, añadir tomate y cocinar 15 minutos.<br>3. Mezclar con la pasta.",
+                    "ingredientes": [
+                        { "nombre": "Pasta macarrones 1kg", "precioBase": 1.05 },
+                        { "nombre": "Tomate triturado natural 800g", "precioBase": 1.00 },
+                        { "nombre": "Carne picada ternera/cerdo 500g", "precioBase": 4.85 },
+                        { "nombre": "Cebollas malla 1kg", "precioBase": 1.40 }
+                    ]
+                },
+                {
+                    "id": 13, "estilo": "Fitness / Proteica", "nombre": "Salmón a la plancha con arroz y verduras", "tipo": "comida",
+                    "preparacion": "1. Cocer arroz redondo.<br>2. Cocinar lomos de salmón a la plancha.<br>3. Servir con zanahoria y calabacín salteados.",
+                    "ingredientes": [
+                        { "nombre": "Lomos de Salmón congelado 400g", "precioBase": 5.95 },
+                        { "nombre": "Arroz redondo 1kg", "precioBase": 1.30 },
+                        { "nombre": "Zanahoria 1kg", "precioBase": 1.20 },
+                        { "nombre": "Calabacín unidad", "precioBase": 1.15 }
+                    ]
+                },
+                {
+                    "id": 26, "estilo": "Fitness / Proteica", "nombre": "Tortitas de avena y plátano", "tipo": "merienda",
+                    "preparacion": "1. Mezclar muesli triturado con huevo y leche.<br>2. Cocinar en sartén antiadherente.",
+                    "ingredientes": [
+                        { "nombre": "Cereales muesli 500g", "precioBase": 2.15 },
+                        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+                        { "nombre": "Leche semidesnatada 1L", "precioBase": 0.95 }
+                    ]
+                },
+                {
+                    "id": 36, "estilo": "Fitness / Proteica", "nombre": "Tortilla francesa de pavo con ensalada", "tipo": "cena",
+                    "preparacion": "1. Hacer tortilla con huevos y pavo.<br>2. Acompañar con lechuga fresca.",
+                    "ingredientes": [
+                        { "nombre": "Huevos camperos docena", "precioBase": 2.45 },
+                        { "nombre": "Pavo lonchas fiambre 250g", "precioBase": 2.10 },
+                        { "nombre": "Lechuga iceberg", "precioBase": 1.10 }
+                    ]
+                },
+                {
+                    "id": 37, "estilo": "Mediterránea", "nombre": "Pechuga de pollo a la plancha con patatas asadas", "tipo": "cena",
+                    "preparacion": "1. Hornear patatas en gajos.<br>2. Hacer pollo a la plancha.",
+                    "ingredientes": [
+                        { "nombre": "Pechuga de Pollo 1kg", "precioBase": 6.90 },
+                        { "nombre": "Patatas malla 3kg", "precioBase": 3.50 },
+                        { "nombre": "Aceite de oliva virgen extra 1L", "precioBase": 8.50 }
+                    ]
+                }
+            ]
+        };
+
+        const state = {
+            supermercado: 'mercadona',
+            presupuesto: 65,
+            adultos: 1,
+            diasSeleccionados: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+            comidasSeleccionadas: { desayuno: true, almuerzo: true, merienda: false, cena: true },
+            estilosElegidos: ['Mediterránea', 'Fitness / Proteica']
+        };
+
+        const supermercadosInfo = {
+            mercadona: { nombre: 'Mercadona', marca: 'Hacendado', factor: 1.0 },
+            carrefour: { nombre: 'Carrefour', marca: 'Carrefour', factor: 1.05 },
+            aldi: { nombre: 'Aldi', marca: 'Milsani / GutBio', factor: 0.96 },
+            bm: { nombre: 'BM Supermercados', marca: 'BM / Selección', factor: 1.12 },
+            ahorramas: { nombre: 'Ahorramas', marca: 'Alipende', factor: 0.98 }
+        };
+
+        const todosLosDias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+
+        function renderStep(step) {
+            const app = document.getElementById('app');
+            app.innerHTML = '';
+
+            switch(step) {
+                case 0:
+                    app.innerHTML = `
+                        <div class="step-indicator">Paso 1 de 5</div>
+                        <h2>¿Dónde haces la compra habitual?</h2>
+                        <div class="super-grid">
+                            ${Object.keys(supermercadosInfo).map(key => `
+                                <div class="super-card ${state.supermercado === key ? 'selected' : ''}" onclick="setSuper('${key}')">
+                                    <div class="super-logo ${key}">${supermercadosInfo[key].nombre}</div>
+                                    <small style="color:var(--gray)">Marca: ${supermercadosInfo[key].marca}</small>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button class="btn-primary" onclick="nextStep(1)">Continuar</button>
+                    `;
+                    break;
+                case 1:
+                    app.innerHTML = `
+                        <div class="step-indicator">Paso 2 de 5</div>
+                        <h2>Presupuesto semanal para compras</h2>
+                        <div class="budget-display"><span id="budgetValue">${state.presupuesto}</span> €</div>
+                        <input type="range" min="35" max="150" step="5" value="${state.presupuesto}" oninput="updateBudget(this.value)">
+                        <div class="budget-labels"><span>35 €</span><span>150 €</span></div>
+                        <button class="btn-primary" onclick="nextStep(2)">Continuar</button>
+                    `;
+                    break;
+                case 2:
+                    app.innerHTML = `
+                        <div class="step-indicator">Paso 3 de 5</div>
+                        <h2>¿Quién come en casa?</h2>
+                        <div class="counter-box">
+                            <div><strong>Adultos</strong><br><small style="color:var(--gray)">Consumo estándar</small></div>
+                            <div class="counter-controls">
+                                <button class="counter-btn" onclick="adjustCount(-1)">-</button>
+                                <span id="adultosCount" style="font-size: 1.2rem; font-weight: bold;">${state.adultos}</span>
+                                <button class="counter-btn" onclick="adjustCount(1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="nextStep(3)">Continuar</button>
+                    `;
+                    break;
+                case 3:
+                    app.innerHTML = `
+                        <div class="step-indicator">Paso 4 de 5</div>
+                        <h2>¿Qué días y comidas haces en casa?</h2>
+                        <p style="font-size:0.85rem; color:var(--gray); margin-bottom:10px;">Selecciona los días que cocinarás:</p>
+                        <div class="grid-days">
+                            ${todosLosDias.map(dia => `
+                                <label class="option-item" style="padding: 8px 10px;">
+                                    <input type="checkbox" value="${dia}" ${state.diasSeleccionados.includes(dia) ? 'checked' : ''} onchange="toggleDia(this)"> ${dia}
+                                </label>
+                            `).join('')}
+                        </div>
+                        <p style="font-size:0.85rem; color:var(--gray); margin: 10px 0 6px 0;">Comidas a incluir:</p>
+                        <div class="options-list">
+                            <label class="option-item"><input type="checkbox" value="desayuno" ${state.comidasSeleccionadas.desayuno ? 'checked' : ''} onchange="toggleComida('desayuno', this)"> Desayuno</label>
+                            <label class="option-item"><input type="checkbox" value="almuerzo" ${state.comidasSeleccionadas.almuerzo ? 'checked' : ''} onchange="toggleComida('almuerzo', this)"> Almuerzo / Comida</label>
+                            <label class="option-item"><input type="checkbox" value="merienda" ${state.comidasSeleccionadas.merienda ? 'checked' : ''} onchange="toggleComida('merienda', this)"> Merienda</label>
+                            <label class="option-item"><input type="checkbox" value="cena" ${state.comidasSeleccionadas.cena ? 'checked' : ''} onchange="toggleComida('cena', this)"> Cena</label>
+                        </div>
+                        <button class="btn-primary" onclick="nextStep(4)">Generar Menú y Lista</button>
+                    `;
+                    break;
+                case 4:
+                    generarPlanificadorFlexible(state.supermercado);
+                    break;
+            }
+        }
+
+        function nextStep(step) {
+            if (step === 3 && state.diasSeleccionados.length === 0) {
+                alert("Por favor, selecciona al menos un día de la semana.");
+                return;
+            }
+            renderStep(step);
+        }
+
+        function setSuper(key) {
+            state.supermercado = key;
+            renderStep(0);
+        }
+
+        function updateBudget(val) {
+            state.presupuesto = parseInt(val);
+            document.getElementById('budgetValue').innerText = val;
+        }
+
+        function adjustCount(delta) {
+            state.adultos = Math.max(1, state.adultos + delta);
+            document.getElementById('adultosCount').innerText = state.adultos;
+        }
+
+        function toggleDia(checkbox) {
+            if(checkbox.checked) {
+                if(!state.diasSeleccionados.includes(checkbox.value)) state.diasSeleccionados.push(checkbox.value);
+            } else {
+                state.diasSeleccionados = state.diasSeleccionados.filter(d => d !== checkbox.value);
+            }
+        }
+
+        function toggleComida(tipo, checkbox) {
+            state.comidasSeleccionadas[tipo] = checkbox.checked;
+        }
+
+        function generarPlanificadorFlexible(supKey) {
+            const supInfo = supermercadosInfo[supKey];
+            const presupuestoObjetivo = state.presupuesto;
+
+            let listaCompraMap = new Map();
+            let totalCesta = 0;
+
+            let recetasValidas = baseRecetas.recetas.filter(r => state.estilosElegidos.includes(r.estilo));
+
+            let desayunos = recetasValidas.filter(r => r.tipo === 'desayuno');
+            let comidas = recetasValidas.filter(r => r.tipo === 'comida');
+            let meriendas = recetasValidas.filter(r => r.tipo === 'merienda');
+            let cenas = recetasValidas.filter(r => r.tipo === 'cena');
+
+            if (desayunos.length === 0) desayunos = baseRecetas.recetas;
+            if (comidas.length === 0) comidas = baseRecetas.recetas;
+            if (meriendas.length === 0) meriendas = baseRecetas.recetas;
+            if (cenas.length === 0) cenas = baseRecetas.recetas;
+
+            let planSemanal = [];
+            let recetasUnicasUsadas = [];
+
+            state.diasSeleccionados.forEach((dia, index) => {
+                let objDia = { dia: dia };
+
+                if (state.comidasSeleccionadas.desayuno) {
+                    let r = desayunos[index % desayunos.length];
+                    objDia.desayuno = r.nombre;
+                    if (!recetasUnicasUsadas.some(item => item.id === r.id)) recetasUnicasUsadas.push(r);
+                }
+                if (state.comidasSeleccionadas.almuerzo) {
+                    let r = comidas[index % comidas.length];
+                    objDia.almuerzo = r.nombre;
+                    if (!recetasUnicasUsadas.some(item => item.id === r.id)) recetasUnicasUsadas.push(r);
+                }
+                if (state.comidasSeleccionadas.merienda) {
+                    let r = meriendas[index % meriendas.length];
+                    objDia.merienda = r.nombre;
+                    if (!recetasUnicasUsadas.some(item => item.id === r.id)) recetasUnicasUsadas.push(r);
+                }
+                if (state.comidasSeleccionadas.cena) {
+                    let r = cenas[index % cenas.length];
+                    objDia.cena = r.nombre;
+                    if (!recetasUnicasUsadas.some(item => item.id === r.id)) recetasUnicasUsadas.push(r);
+                }
+
+                planSemanal.push(objDia);
+            });
+
+            // Ajuste de presupuesto
+            let ciclo = 0;
+            while (totalCesta < (presupuestoObjetivo * 0.95) && ciclo < 6) {
+                for (let receta of recetasUnicasUsadas) {
+                    if (totalCesta >= presupuestoObjetivo) break;
+
+                    for (let ing of receta.ingredientes) {
+                        let precioAjustado = Math.round((ing.precioBase * supInfo.factor) * 100) / 100;
+                        
+                        if (totalCesta + precioAjustado <= (presupuestoObjetivo * 1.10)) {
+                            let clave = ing.nombre;
+                            if (listaCompraMap.has(clave)) {
+                                let item = listaCompraMap.get(clave);
+                                item.cantidad++;
+                                item.precioTotal = Math.round((item.precioTotal + precioAjustado) * 100) / 100;
+                            } else {
+                                listaCompraMap.set(clave, {
+                                    nombre: ing.nombre,
+                                    cantidad: 1,
+                                    precioTotal: precioAjustado
+                                });
+                            }
+                            totalCesta = Math.round((totalCesta + precioAjustado) * 100) / 100;
+                        }
+                    }
+                }
+                ciclo++;
+            }
+
+            let listaItems = Array.from(listaCompraMap.values()).map(item => ({
+                nombre: item.cantidad > 1 ? `${item.nombre} (x${item.cantidad})` : item.nombre,
+                precio: item.precioTotal
+            }));
+
+            renderizarPlanificadorFlexible(planSemanal, recetasUnicasUsadas, listaItems, totalCesta, supKey);
+        }
+
+        function renderizarPlanificadorFlexible(planSemanal, recetasObj, listaItems, totalActual, supKey) {
+            const supInfo = supermercadosInfo[supKey];
+            const app = document.getElementById('app');
+            const presupuestoObjetivo = state.presupuesto;
+
+            app.innerHTML = `
+                <div class="results-header">
+                    <div>
+                        <strong>Supermercado:</strong> ${supInfo.nombre} (${supInfo.marca})<br>
+                        <small>📅 Días: <strong>${state.diasSeleccionados.length} días planificados</strong></small>
+                    </div>
+                    <div class="budget-comparison">
+                        <div>Objetivo: <span class="budget-target-num">${presupuestoObjetivo} €</span></div>
+                        <div>Cesta real: <span class="budget-actual-num">${totalActual.toFixed(2)} €</span></div>
+                    </div>
+                </div>
+
+                <h2>📅 Planning Semanal Personalizado</h2>
+                <div style="margin-bottom: 1.5rem; max-height: 280px; overflow-y: auto; padding-right: 5px;">
+                    ${planSemanal.map(p => `
+                        <div class="planner-day-card">
+                            <div class="planner-day-title">${p.dia}</div>
+                            ${p.desayuno ? `<div class="planner-meal">☕ <strong>Desayuno:</strong> ${p.desayuno}</div>` : ''}
+                            ${p.almuerzo ? `<div class="planner-meal">🍽️ <strong>Almuerzo:</strong> ${p.almuerzo}</div>` : ''}
+                            ${p.merienda ? `<div class="planner-meal">🍎 <strong>Merienda:</strong> ${p.merienda}</div>` : ''}
+                            ${p.cena ? `<div class="planner-meal">🌙 <strong>Cena:</strong> ${p.cena}</div>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
+
+                <h2>🛒 Lista de la Compra Ajustada</h2>
+                <div style="margin-bottom: 1.5rem; max-height: 200px; overflow-y: auto; padding-right: 5px;">
+                    ${listaItems.map(i => `
+                        <div class="grocery-item">
+                            <span>${i.nombre}</span>
+                            <span><strong>${i.precio.toFixed(2)} €</strong></span>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <h2>🍳 Recetario Paso a Paso</h2>
+                <div style="margin-bottom: 1.5rem;">
+                    ${recetasObj.map(r => `
+                        <div class="recipe-full-card">
+                            <div class="recipe-full-title">🍳 ${r.nombre}</div>
+                            <div class="recipe-section-subtitle">Ingredientes necesarios:</div>
+                            <ul class="recipe-ing-list">
+                                ${r.ingredientes.map(i => `<li>${i.nombre}</li>`).join('')}
+                            </ul>
+                            <div class="recipe-section-subtitle">Preparación:</div>
+                            <div class="recipe-steps-text">${r.preparacion}</div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <button class="btn-primary" onclick="location.reload()" style="background:#7f8c8d;">Empezar de nuevo</button>
+            `;
+        }
+
+        // Registro del Service Worker para funcionamiento como App Móvil PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((reg) => console.log('PWA ServiceWorker registrado correctamente:', reg.scope))
+                    .catch((err) => console.log('Error al registrar ServiceWorker:', err));
+            });
+        }
+
+        renderStep(0);
+    </script>
+</body>
+</html>

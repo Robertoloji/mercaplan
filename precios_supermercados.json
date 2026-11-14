@@ -1,0 +1,222 @@
+{
+    "actualizado": "2026-11-14 12:12:52",
+    "codigo_postal": "28110",
+    "supermercados": {
+        "mercadona": [],
+        "carrefour": [],
+        "ahorramas": [
+            {
+                "nombre": "LOTE 2 kg de pechugas de pollo",
+                "precio": 7.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Pechuga de pollo",
+                "precio": 7.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Jamón cocido gran selección duroc Frial",
+                "precio": 17.49,
+                "formato": ""
+            },
+            {
+                "nombre": "Burger meat de añojo Angus 150g",
+                "precio": 2.49,
+                "formato": ""
+            },
+            {
+                "nombre": "Mini burger meat angus bandeja de 10 unidades 300g aprox",
+                "precio": 6.25,
+                "formato": ""
+            },
+            {
+                "nombre": "Burger meat de vacuno madurada Pujols 150g",
+                "precio": 2.71,
+                "formato": ""
+            },
+            {
+                "nombre": "Huevos de gallinas sueltas en el gallinero Alipende 12u \"clase l\"",
+                "precio": 3.05,
+                "formato": ""
+            },
+            {
+                "nombre": "Huevos de gallinas sueltas en el gallinero Alipende 24u \"clase m\"",
+                "precio": 5.25,
+                "formato": ""
+            },
+            {
+                "nombre": "Huevos camperos Alipende 12 unidades",
+                "precio": 3.35,
+                "formato": ""
+            },
+            {
+                "nombre": "Arroz Alipende 1kg redondo",
+                "precio": 1.15,
+                "formato": ""
+            },
+            {
+                "nombre": "Arroz redondo Brillante pack 2",
+                "precio": 1.2,
+                "formato": ""
+            },
+            {
+                "nombre": "Arroz Sos 1kg granza",
+                "precio": 1.88,
+                "formato": ""
+            },
+            {
+                "nombre": "Leche semidesnatada Alipende 1L",
+                "precio": 0.83,
+                "formato": ""
+            },
+            {
+                "nombre": "Leche Lauki 1l semidesnatada",
+                "precio": 1.09,
+                "formato": ""
+            },
+            {
+                "nombre": "Leche Asturiana 1l semidesnatada",
+                "precio": 1.09,
+                "formato": ""
+            },
+            {
+                "nombre": "Aceite oliva virgen extra Alipende 1l",
+                "precio": 4.1,
+                "formato": ""
+            },
+            {
+                "nombre": "Mantequilla irlandesa Kerrygold 200g pastilla sin sal",
+                "precio": 4.49,
+                "formato": ""
+            },
+            {
+                "nombre": "Aceite de girasol Alipende 1l",
+                "precio": 1.85,
+                "formato": ""
+            },
+            {
+                "nombre": "Salmón por medios o enteros peso aproximado pieza 4kg",
+                "precio": 9.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Salmón noruego Poseidón en lomos 250g",
+                "precio": 5.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Poke de Salmón Gimar 100g",
+                "precio": 5.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Tomate triturado categoría extra sin gluten Alipende 400g",
+                "precio": 0.55,
+                "formato": ""
+            },
+            {
+                "nombre": "Tomate triturado sin gluten categoría extra Alipende 800 g",
+                "precio": 1.0,
+                "formato": ""
+            },
+            {
+                "nombre": "Tomate triturado natural categoria extra Apis 400g",
+                "precio": 1.25,
+                "formato": ""
+            },
+            {
+                "nombre": "Garbanzo cocido Alipende 400g",
+                "precio": 0.8,
+                "formato": ""
+            },
+            {
+                "nombre": "Garbanza del sur cocida Miau 400g",
+                "precio": 1.52,
+                "formato": ""
+            },
+            {
+                "nombre": "Garbanzo cocido Luengo 400g",
+                "precio": 1.3,
+                "formato": ""
+            },
+            {
+                "nombre": "Queso fresco batido 0% materia grasa Margui 500g",
+                "precio": 1.1,
+                "formato": ""
+            },
+            {
+                "nombre": "Batido Puleva 200ml pack 6 cacao",
+                "precio": 2.79,
+                "formato": ""
+            },
+            {
+                "nombre": "Queso fresco batido proteínas 0% Alipende 500g",
+                "precio": 1.4,
+                "formato": ""
+            },
+            {
+                "nombre": "Plátano canario Gabaceras",
+                "precio": 3.48,
+                "formato": ""
+            },
+            {
+                "nombre": "Plátano canario bolsa",
+                "precio": 3.19,
+                "formato": ""
+            },
+            {
+                "nombre": "Plátano Canario bandeja",
+                "precio": 3.19,
+                "formato": ""
+            },
+            {
+                "nombre": "Pan de molde integral Alipende 460g",
+                "precio": 0.9,
+                "formato": ""
+            },
+            {
+                "nombre": "Mantequilla irlandesa Kerrygold 200g pastilla sin sal",
+                "precio": 4.49,
+                "formato": ""
+            },
+            {
+                "nombre": "Pan de molde integral sin corteza Alipende 450g",
+                "precio": 1.1,
+                "formato": ""
+            },
+            {
+                "nombre": "Atún claro Alipende pack 6 en aceite oliva",
+                "precio": 4.9,
+                "formato": ""
+            },
+            {
+                "nombre": "Atún claro Alipende pack 6 al natural",
+                "precio": 4.2,
+                "formato": ""
+            },
+            {
+                "nombre": "Atún claro Albo pack3 aceite oliva",
+                "precio": 6.99,
+                "formato": ""
+            },
+            {
+                "nombre": "Pluma Alipende 1kg nº5",
+                "precio": 1.2,
+                "formato": ""
+            },
+            {
+                "nombre": "Macarrones Garofalo 500g",
+                "precio": 1.39,
+                "formato": ""
+            },
+            {
+                "nombre": "Pluma Nº6 Gallo 400g",
+                "precio": 1.0,
+                "formato": ""
+            }
+        ],
+        "bm": [],
+        "aldi": []
+    }
+}
