@@ -1,17 +1,22 @@
-self.addEventListener('install', (e) => {
+const CACHE_NAME = 'mercaplan-v1';
+const assets = [
+  './index.html',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
+];
+
+self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open('mercaplan-v1').then((cache) => {
-      return cache.addAll([
-        './index.html',
-        './manifest.json'
-      ]);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(assets);
     })
   );
 });
 
-self.addEventListener('fetch', (e) => {
+self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request).then((response) => {
+    caches.match(e.request).then(response => {
       return response || fetch(e.request);
     })
   );
