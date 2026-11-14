@@ -53,7 +53,6 @@
             gap: 10px;
         }
 
-        /* ESTILO PARA EL LOGOTIPO DE IMAGEN */
         .logo-img {
             width: 40px;
             height: 40px;
@@ -101,7 +100,6 @@
             color: var(--text);
         }
 
-        /* SUPERMARKET GRID */
         .super-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -144,7 +142,6 @@
         .super-logo.bm { color: #e65100; }
         .super-logo.ahorramas { color: #c62828; }
 
-        /* BUDGET SLIDER */
         .budget-display {
             font-size: 2.5rem;
             font-weight: bold;
@@ -182,7 +179,6 @@
             font-size: 0.9rem;
         }
 
-        /* COUNTERS & OPTIONS */
         .counter-box {
             display: flex;
             justify-content: space-between;
@@ -267,7 +263,6 @@
             background: var(--primary-dark);
         }
 
-        /* RESULTS VIEW STYLES */
         .results-header {
             background: #e8f5e9;
             padding: 1.2rem;
@@ -377,7 +372,6 @@
 
     <header>
         <div class="logo-area">
-            <!-- AQUÍ SUSTITUIMOS EL TEXTO MP POR LA IMAGEN -->
             <img src="icon-192.png" alt="MercaPlan Logo" class="logo-img">
             <h1>MercaPlan</h1>
         </div>
@@ -389,6 +383,15 @@
     </div>
 
     <script>
+        // Registro del Service Worker para funcionamiento como App Móvil PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((reg) => console.log('PWA ServiceWorker registrado correctamente:', reg.scope))
+                    .catch((err) => console.log('Error al registrar ServiceWorker:', err));
+            });
+        }
+
         const baseRecetas = {
             "recetas": [
                 {
@@ -655,7 +658,6 @@
                 planSemanal.push(objDia);
             });
 
-            // Ajuste de presupuesto
             let ciclo = 0;
             while (totalCesta < (presupuestoObjetivo * 0.95) && ciclo < 6) {
                 for (let receta of recetasUnicasUsadas) {
@@ -749,15 +751,6 @@
 
                 <button class="btn-primary" onclick="location.reload()" style="background:#7f8c8d;">Empezar de nuevo</button>
             `;
-        }
-
-        // Registro del Service Worker para funcionamiento como App Móvil PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then((reg) => console.log('PWA ServiceWorker registrado correctamente:', reg.scope))
-                    .catch((err) => console.log('Error al registrar ServiceWorker:', err));
-            });
         }
 
         renderStep(0);
