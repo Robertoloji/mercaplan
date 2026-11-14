@@ -1,4 +1,5 @@
 {
+  "id": "/mercaplan/",
   "name": "MercaPlan PWA",
   "short_name": "MercaPlan",
   "description": "Aplicación inteligente para generar menús semanales personalizados y listas de la compra ajustadas a tu presupuesto.",
